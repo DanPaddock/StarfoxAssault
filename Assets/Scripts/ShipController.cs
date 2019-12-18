@@ -1,34 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class ShipController : MonoBehaviour
 {
+    [Header("General")]
     [Tooltip("In ms^-1")] [SerializeField] float speed = 4f;
     [Tooltip("In m")] [SerializeField] float range_x = 5f;
     [Tooltip("In m")] [SerializeField] float range_y = 3f;
 
+    [Header("Screen Position")]
     [SerializeField] float pos_pitch_factor = -5f;
-    [SerializeField] float control_pitch_factor = -20f;
-
     [SerializeField] float pos_yaw_factor = 5f;
-    [SerializeField] float control_roll_factor = -20f;
 
+    [Header("Control Throw")]
+    [SerializeField] float control_pitch_factor = -20f;
+    [SerializeField] float control_roll_factor = -20f;
     float throw_x;
     float throw_y;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    bool controlsEnabled = true;
 
     // Update is called once per frame
     void Update()
     {
-        ProcessTranslation();
-        ProcessRotation();
+        if (controlsEnabled)
+        {
+            ProcessTranslation();
+            ProcessRotation();
+        }
     }
 
     private void ProcessRotation()
@@ -57,5 +59,10 @@ public class ShipController : MonoBehaviour
         float modified_x = Mathf.Clamp(pos_x, -range_x, range_x);
         float modified_y = Mathf.Clamp(pos_y, -range_y, range_y);
         transform.localPosition = new Vector3(modified_x, modified_y, transform.localPosition.z);
+    }
+
+    void OnPlayerDeath()
+    {
+        controlsEnabled = false;
     }
 }
