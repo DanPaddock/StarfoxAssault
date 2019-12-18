@@ -165,17 +165,17 @@ PrefabInstance:
     - target: {fileID: 9110301413296980847, guid: 3bf1646a48d157c4e8a9b12c4bf455bb,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000021855694
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9110301413296980847, guid: 3bf1646a48d157c4e8a9b12c4bf455bb,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9110301413296980847, guid: 3bf1646a48d157c4e8a9b12c4bf455bb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9110301413296980847, guid: 3bf1646a48d157c4e8a9b12c4bf455bb,
         type: 3}
@@ -306,6 +306,10 @@ MonoBehaviour:
   speed: 4
   range_x: 5
   range_y: 3
+  pos_pitch_factor: -5
+  control_pitch_factor: -20
+  pos_yaw_factor: 5
+  control_roll_factor: -20
 --- !u!1 &758003004
 GameObject:
   m_ObjectHideFlags: 0

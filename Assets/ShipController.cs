@@ -9,6 +9,15 @@ public class ShipController : MonoBehaviour
     [Tooltip("In m")] [SerializeField] float range_x = 5f;
     [Tooltip("In m")] [SerializeField] float range_y = 3f;
 
+    [SerializeField] float pos_pitch_factor = -5f;
+    [SerializeField] float control_pitch_factor = -20f;
+
+    [SerializeField] float pos_yaw_factor = 5f;
+    [SerializeField] float control_roll_factor = -20f;
+
+    float throw_x;
+    float throw_y;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +27,26 @@ public class ShipController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float throw_x = CrossPlatformInputManager.GetAxis("Horizontal");
-        float throw_y = CrossPlatformInputManager.GetAxis("Vertical");
+        ProcessTranslation();
+        ProcessRotation();
+    }
+
+    private void ProcessRotation()
+    {
+        float pitchDueToPosition = transform.localPosition.y * pos_pitch_factor;
+        float pitchDueToThrow = throw_y * control_pitch_factor;
+        float pitch = pitchDueToPosition + pitchDueToThrow;
+
+        float yaw = transform.localPosition.x * pos_yaw_factor;
+
+        float roll = throw_x * control_roll_factor;
+        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+    }
+
+    private void ProcessTranslation()
+    {
+        throw_x = CrossPlatformInputManager.GetAxis("Horizontal");
+        throw_y = CrossPlatformInputManager.GetAxis("Vertical");
 
         float offset_x = throw_x * speed * Time.deltaTime;
         float offset_y = throw_y * speed * Time.deltaTime;
