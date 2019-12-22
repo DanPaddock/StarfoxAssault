@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 14374491}
   - component: {fileID: 14374490}
   m_Layer: 0
-  m_Name: Explosion
+  m_Name: Death FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &14374493
 Transform:
   m_ObjectHideFlags: 0
@@ -5039,6 +5039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelLoadDelay: 1
+  deathFX: {fileID: 14374489}
 --- !u!1 &9107693602618825489
 GameObject:
   m_ObjectHideFlags: 0
@@ -5305,7 +5306,7 @@ PrefabInstance:
     - target: {fileID: 6391089154880485846, guid: bcb16bf46fbf0e44aa8a5a2614999e49,
         type: 3}
       propertyPath: m_Name
-      value: Bullets (1)
+      value: Bullets Left
       objectReference: {fileID: 0}
     - target: {fileID: 6391089154880485847, guid: bcb16bf46fbf0e44aa8a5a2614999e49,
         type: 3}
@@ -5362,6 +5363,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6391089154880485845, guid: bcb16bf46fbf0e44aa8a5a2614999e49,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391089154880485845, guid: bcb16bf46fbf0e44aa8a5a2614999e49,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391089154880485845, guid: bcb16bf46fbf0e44aa8a5a2614999e49,
+        type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391089154880485845, guid: bcb16bf46fbf0e44aa8a5a2614999e49,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcb16bf46fbf0e44aa8a5a2614999e49, type: 3}
 --- !u!4 &6391089154620427073 stripped
@@ -5380,7 +5401,7 @@ PrefabInstance:
     - target: {fileID: 6391089154880485846, guid: bcb16bf46fbf0e44aa8a5a2614999e49,
         type: 3}
       propertyPath: m_Name
-      value: Bullets
+      value: Bullets Right
       objectReference: {fileID: 0}
     - target: {fileID: 6391089154880485847, guid: bcb16bf46fbf0e44aa8a5a2614999e49,
         type: 3}
@@ -5436,6 +5457,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391089154880485845, guid: bcb16bf46fbf0e44aa8a5a2614999e49,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391089154880485845, guid: bcb16bf46fbf0e44aa8a5a2614999e49,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391089154880485845, guid: bcb16bf46fbf0e44aa8a5a2614999e49,
+        type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391089154880485845, guid: bcb16bf46fbf0e44aa8a5a2614999e49,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcb16bf46fbf0e44aa8a5a2614999e49, type: 3}
