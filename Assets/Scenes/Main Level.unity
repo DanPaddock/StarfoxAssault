@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Ship
       objectReference: {fileID: 0}
+    - target: {fileID: 14374489, guid: 3bf1646a48d157c4e8a9b12c4bf455bb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9110301413296980847, guid: 3bf1646a48d157c4e8a9b12c4bf455bb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -307,9 +311,50 @@ PrefabInstance:
       propertyPath: deathFX
       value: 
       objectReference: {fileID: 14374489}
-    - target: {fileID: 14374489, guid: 3bf1646a48d157c4e8a9b12c4bf455bb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 419558668, guid: 3bf1646a48d157c4e8a9b12c4bf455bb, type: 3}
+      propertyPath: m_Name
+      value: Bullets Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391089154620427072, guid: 3bf1646a48d157c4e8a9b12c4bf455bb,
+        type: 3}
+      propertyPath: m_Name
+      value: Bullets Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 419558671, guid: 3bf1646a48d157c4e8a9b12c4bf455bb, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419558671, guid: 3bf1646a48d157c4e8a9b12c4bf455bb, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419558671, guid: 3bf1646a48d157c4e8a9b12c4bf455bb, type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419558671, guid: 3bf1646a48d157c4e8a9b12c4bf455bb, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391089154620427075, guid: 3bf1646a48d157c4e8a9b12c4bf455bb,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391089154620427075, guid: 3bf1646a48d157c4e8a9b12c4bf455bb,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391089154620427075, guid: 3bf1646a48d157c4e8a9b12c4bf455bb,
+        type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391089154620427075, guid: 3bf1646a48d157c4e8a9b12c4bf455bb,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bf1646a48d157c4e8a9b12c4bf455bb, type: 3}
