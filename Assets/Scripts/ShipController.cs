@@ -11,6 +11,8 @@ public class ShipController : MonoBehaviour
     [Tooltip("In m")] [SerializeField] float range_x = 5f;
     [Tooltip("In m")] [SerializeField] float range_y = 3f;
 
+    [SerializeField] GameObject[] Guns;
+
     [Header("Screen Position")]
     [SerializeField] float pos_pitch_factor = -5f;
     [SerializeField] float pos_yaw_factor = 5f;
@@ -30,6 +32,7 @@ public class ShipController : MonoBehaviour
         {
             ProcessTranslation();
             ProcessRotation();
+            ProcessFiring();
         }
     }
 
@@ -64,5 +67,33 @@ public class ShipController : MonoBehaviour
     void OnPlayerDeath()
     {
         controlsEnabled = false;
+    }
+
+    void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            ActivateGuns();
+        }
+        else
+        {
+            DeactivateGuns();
+        }
+    }
+
+    private void ActivateGuns()
+    {
+        foreach (GameObject gun in Guns)
+        {
+            gun.SetActive(true);
+        }
+    }
+
+    private void DeactivateGuns()
+    {
+        foreach(GameObject gun in Guns)
+        {
+            gun.SetActive(false);
+        }
     }
 }
