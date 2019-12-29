@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void ButtonPressed()
     {
-        Invoke("LoadFirstScene", 2f);
+        Invoke("LoadFirstScene", 0.2f);
     }
+
 
     void LoadFirstScene()
     {
