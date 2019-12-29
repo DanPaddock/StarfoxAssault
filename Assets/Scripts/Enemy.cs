@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         scoreboard.UpdateScore(ScorePerHit);
-        Health -= 10; // Constant damage, change later
+        Health -= 50; // Constant damage, change later
         if(Health <= 0)
         {
             KillEnemy();
